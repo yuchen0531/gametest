@@ -1,12 +1,5 @@
 webpackJsonp([0],{
 
-/***/ "5oXM":
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "8Ba4":
 /***/ (function(module, exports) {
 
@@ -470,7 +463,7 @@ var Rule_Component = Rule_normalizeComponent(
       this.score = 0;
     },
     newarray: function newarray() {
-      for (var i = 0; i < 100; i++) {
+      for (var i = 0; i < 500; i++) {
         this.numarr.push(Math.floor(Math.random() * 9));
         if (this.numarr[i] === this.numarr[i - 1]) {
           this.numarr[i] = Math.floor(Math.random() * 9);
@@ -492,20 +485,20 @@ var Rule_Component = Rule_normalizeComponent(
         document.querySelector('#game_item_' + _this2.numarr[i]).classList.remove('d-none');
         _this2.timer2 = setTimeout(function () {
           document.querySelector('#game_item_' + _this2.numarr[j]).classList.add('d-none');
-        }, 1000);
+        }, 400);
         i++;
-      }, 500);
+      }, 300);
     }
   }
 });
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-7d86e17e","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/Game.vue
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-278dd99c","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/Game.vue
 var Game_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"game d-flex align-items-center"},[_c('div',[_c('div',{staticClass:"text-white h8 text-center mb-2"},[_vm._v("Time: "+_vm._s(_vm.time)+" Score: "+_vm._s(_vm.score))]),_vm._v(" "),_c('div',{staticClass:"game-content d-flex flex-wrap w-75 mx-auto mb-5"},_vm._l((9),function(items,index){return _c('div',{key:index,staticClass:"game-items m-2 bg-white position-relative"},[_c('transition',{attrs:{"name":"fade"}},[_c('div',{staticClass:"d-none p-2 position-absolute game-click-item",attrs:{"id":("game_item_" + index)},on:{"click":function($event){return _vm.getScore(index)}}},[_c('img',{attrs:{"src":__webpack_require__("bcBx"),"width":"100%","alt":""}})])]),_vm._v(" "),_vm._m(0,true)],1)}),0),_vm._v(" "),_c('div',{staticClass:"start-btn p-3 text-white mx-auto",on:{"click":_vm.start}},[_vm._v("start")])]),_vm._v(" "),(_vm.finished)?_c('div',{staticClass:"model d-flex align-items-center justify-content-center"},[_c('div',[_c('div',{staticClass:"text-white h8 text-center mb-5"},[_vm._v("Your Score : "+_vm._s(_vm.score))]),_vm._v(" "),_c('div',{staticClass:"start-btn p-3 text-white mx-auto",on:{"click":_vm.gamefinish}},[_vm._v("close")])])]):_vm._e()])}
 var Game_staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"p-2"},[_c('img',{attrs:{"src":__webpack_require__("9q15"),"width":"100%","alt":""}})])}]
 var Game_esExports = { render: Game_render, staticRenderFns: Game_staticRenderFns }
 /* harmony default export */ var views_Game = (Game_esExports);
 // CONCATENATED MODULE: ./src/views/Game.vue
 function Game_injectStyle (ssrContext) {
-  __webpack_require__("5oXM")
+  __webpack_require__("bN+E")
 }
 var Game_normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -616,6 +609,13 @@ new vue_esm["a" /* default */]({
 /***/ }),
 
 /***/ "ae0T":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "bN+E":
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
