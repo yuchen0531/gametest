@@ -28,6 +28,13 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGsAAABqAQMAAACB
 
 /***/ }),
 
+/***/ "HHBT":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "Jmt5":
 /***/ (function(module, exports) {
 
@@ -179,18 +186,22 @@ var vue_router_esm = __webpack_require__("/ocq");
       this.score += 1;
       this.$nextTick(function () {
         // document.querySelector(`#game_item_${index}`).classList.add('small')
-        document.querySelector('#game_item_' + index).classList.add('movesoonout');
-        // document.querySelector(`#game_item_img_${index}`).classList.remove('d-none')
+        document.querySelector('#game_item_' + index).classList.add('d-none');
+        document.querySelector('#game_item_img_' + index).classList.remove('d-none');
       });
-      // this.changetimer = setTimeout(() => {
-      //   document.querySelector(`#game_item_img_${index}`).classList.add('d-none')
-      //   // document.querySelector(`#game_item_${index}`).classList.add('d-none')
-      // }, 200)
+      this.changetimer = setTimeout(function () {
+        document.querySelector('#game_item_img_' + index).classList.add('d-none');
+        // document.querySelector(`#game_item_${index}`).classList.add('d-none')
+      }, 100);
     },
     gamefinish: function gamefinish() {
       this.playing = false;
       this.finished = false;
       this.score = 0;
+      this.timer = null;
+      this.timer2 = null;
+      this.alltimer = null;
+      this.countdown = null;
     },
     start: function start() {
       var _this2 = this;
@@ -223,11 +234,11 @@ var vue_router_esm = __webpack_require__("/ocq");
               i = Math.floor(Math.random() * 9);
             } while (i === j);
             j = i;
+            if (document.querySelector('#game_item_' + i).classList.contains('d-none')) {
+              document.querySelector('#game_item_' + i).classList.remove('d-none');
+            }
             document.querySelector('#game_item_' + i).classList.remove('moveout');
             document.querySelector('#game_item_' + i).classList.add('movein');
-            // if (document.querySelector(`#game_item_${i}`).classList.contains('d-none')) {
-            //   document.querySelector(`#game_item_${i}`).classList.remove('d-none')
-            // }
             _this2.disarray.push(i);
             _this2.timer2 = setTimeout(function () {
               if (document.querySelector('#game_item_' + _this2.disarray[t]).classList.contains('movein')) {
@@ -243,14 +254,14 @@ var vue_router_esm = __webpack_require__("/ocq");
     }
   }
 });
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-f227e402","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/Home.vue
-var Home_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"game d-flex align-items-center"},[_c('div',[_c('div',{staticClass:"text-white h8 text-center mb-2"},[_vm._v("Time: "+_vm._s(_vm.time)+" Score: "+_vm._s(_vm.score)+" version3")]),_vm._v(" "),_c('div',{staticClass:"game-content d-flex flex-wrap w-85 mx-auto mb-3"},_vm._l((9),function(items,index){return _c('div',{key:index,staticClass:"game-items m-2 bg-white position-relative"},[_c('div',{staticClass:"position-absolute game-click-item",attrs:{"id":("game_item_" + index)},on:{"click":function($event){return _vm.getScore(index)}}},[_c('img',{attrs:{"src":__webpack_require__("bcBx"),"width":"100%","alt":""}})]),_vm._v(" "),_vm._m(0,true)])}),0),_vm._v(" "),_c('div',{staticClass:"start-btn p-3 text-white mx-auto",on:{"click":_vm.start}},[_vm._v("start")])]),_vm._v(" "),(_vm.finished)?_c('div',{staticClass:"model d-flex align-items-center justify-content-center"},[_c('div',[_c('div',{staticClass:"text-white h8 text-center mb-5"},[_vm._v("Your Score : "+_vm._s(_vm.score))]),_vm._v(" "),_c('div',{staticClass:"start-btn p-3 text-white mx-auto",on:{"click":_vm.gamefinish}},[_vm._v("close")])])]):_vm._e(),_vm._v(" "),(_vm.count)?_c('div',{staticClass:"model d-flex align-items-center justify-content-center"},[_c('div',[_c('div',{staticClass:"text-white h8 text-center mb-5"},[_vm._v(_vm._s(_vm.counttime))])])]):_vm._e()])}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-010ed93d","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/Home.vue
+var Home_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"game d-flex align-items-center"},[_c('div',[_c('div',{staticClass:"text-white h8 text-center mb-2"},[_vm._v("Time: "+_vm._s(_vm.time)+" Score: "+_vm._s(_vm.score)+" version3")]),_vm._v(" "),_c('div',{staticClass:"game-content d-flex flex-wrap w-85 mx-auto mb-3"},_vm._l((9),function(items,index){return _c('div',{key:index,staticClass:"game-items m-2 bg-white position-relative"},[_c('div',{staticClass:"position-absolute game-click-item",attrs:{"id":("game_item_" + index)},on:{"click":function($event){return _vm.getScore(index)}}},[_c('img',{attrs:{"src":__webpack_require__("bcBx"),"width":"100%","alt":""}})]),_vm._v(" "),_c('div',{staticClass:"d-none small position-absolute",attrs:{"id":("game_item_img_" + index)}},[_c('img',{attrs:{"src":__webpack_require__("uR/t"),"width":"100%","alt":""}})]),_vm._v(" "),_vm._m(0,true)])}),0),_vm._v(" "),_c('div',{staticClass:"start-btn p-3 text-white mx-auto",on:{"click":_vm.start}},[_vm._v("start")])]),_vm._v(" "),(_vm.finished)?_c('div',{staticClass:"model d-flex align-items-center justify-content-center"},[_c('div',[_c('div',{staticClass:"text-white h8 text-center mb-5"},[_vm._v("Your Score : "+_vm._s(_vm.score))]),_vm._v(" "),_c('div',{staticClass:"start-btn p-3 text-white mx-auto",on:{"click":_vm.gamefinish}},[_vm._v("close")])])]):_vm._e(),_vm._v(" "),(_vm.count)?_c('div',{staticClass:"model d-flex align-items-center justify-content-center"},[_c('div',[_c('div',{staticClass:"text-white h8 text-center mb-5"},[_vm._v(_vm._s(_vm.counttime))])])]):_vm._e()])}
 var Home_staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{},[_c('img',{attrs:{"src":__webpack_require__("9q15"),"width":"100%","alt":""}})])}]
 var Home_esExports = { render: Home_render, staticRenderFns: Home_staticRenderFns }
 /* harmony default export */ var views_Home = (Home_esExports);
 // CONCATENATED MODULE: ./src/views/Home.vue
 function Home_injectStyle (ssrContext) {
-  __webpack_require__("qvDK")
+  __webpack_require__("f89q")
 }
 var Home_normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -631,20 +642,20 @@ var Rule_Component = Rule_normalizeComponent(
               document.querySelector('#game_item_' + _this2.disarray[t]).classList.add('d-none');
               t++;
             }, 900);
-          }, 500);
+          }, 700);
         });
       }, 3500);
     }
   }
 });
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-bebb0c26","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/Game.vue
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-37231aab","hasScoped":false,"transformToRequire":{"video":["src","poster"],"source":"src","img":"src","image":"xlink:href"},"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/views/Game.vue
 var Game_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"game d-flex align-items-center"},[_c('div',[_c('div',{staticClass:"text-white h8 text-center mb-2"},[_vm._v("Time: "+_vm._s(_vm.time)+" Score: "+_vm._s(_vm.score)+" version2")]),_vm._v(" "),_c('div',{staticClass:"game-content d-flex flex-wrap w-85 mx-auto mb-3"},_vm._l((9),function(items,index){return _c('div',{key:index,staticClass:"game-items m-2 bg-white position-relative"},[_c('div',{staticClass:"d-none position-absolute game-click-item",attrs:{"id":("game_item_" + index)},on:{"click":function($event){return _vm.getScore(index)}}},[_c('img',{attrs:{"src":__webpack_require__("bcBx"),"width":"100%","alt":""}})]),_vm._v(" "),_c('div',{staticClass:"d-none small position-absolute",attrs:{"id":("game_item_img_" + index)}},[_c('img',{attrs:{"src":__webpack_require__("uR/t"),"width":"100%","alt":""}})]),_vm._v(" "),_vm._m(0,true)])}),0),_vm._v(" "),_c('div',{staticClass:"start-btn p-3 text-white mx-auto",on:{"click":_vm.start}},[_vm._v("start")])]),_vm._v(" "),(_vm.finished)?_c('div',{staticClass:"model d-flex align-items-center justify-content-center"},[_c('div',[_c('div',{staticClass:"text-white h8 text-center mb-5"},[_vm._v("Your Score : "+_vm._s(_vm.score))]),_vm._v(" "),_c('div',{staticClass:"start-btn p-3 text-white mx-auto",on:{"click":_vm.gamefinish}},[_vm._v("close")])])]):_vm._e(),_vm._v(" "),(_vm.count)?_c('div',{staticClass:"model d-flex align-items-center justify-content-center"},[_c('div',[_c('div',{staticClass:"text-white h8 text-center mb-5"},[_vm._v(_vm._s(_vm.counttime))])])]):_vm._e()])}
 var Game_staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{},[_c('img',{attrs:{"src":__webpack_require__("9q15"),"width":"100%","alt":""}})])}]
 var Game_esExports = { render: Game_render, staticRenderFns: Game_staticRenderFns }
 /* harmony default export */ var views_Game = (Game_esExports);
 // CONCATENATED MODULE: ./src/views/Game.vue
 function Game_injectStyle (ssrContext) {
-  __webpack_require__("P1yF")
+  __webpack_require__("HHBT")
 }
 var Game_normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -740,13 +751,6 @@ new vue_esm["a" /* default */]({
 
 /***/ }),
 
-/***/ "P1yF":
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "abM2":
 /***/ (function(module, exports) {
 
@@ -768,14 +772,14 @@ module.exports = __webpack_require__.p + "static/img/u-money.28bf8d2.png";
 
 /***/ }),
 
-/***/ "o8nZ":
+/***/ "f89q":
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ "qvDK":
+/***/ "o8nZ":
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
